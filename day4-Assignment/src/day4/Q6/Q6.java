@@ -1,4 +1,5 @@
 package day4.Q6;
+
 /*
  * Now create your own exception named “InputException” which will take an integer (let’s say n) as
 parameter and set the exception message to “Number can’t be greater than [n]”. Modify the
@@ -14,7 +15,7 @@ public class Q6 {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter maximum limit for numbers");
-		int maxLimit=sc.nextInt();
+		int maxLimit = sc.nextInt();
 		while (true) {
 			System.out.println("Please enter a number or enter ‘-1’ if you want to quit");
 			try {
@@ -22,7 +23,7 @@ public class Q6 {
 				if (no == -1) {
 					break;
 				}
-				if(no>maxLimit)
+				if (no > maxLimit)
 					throw new InputException(maxLimit);
 				if (no % 2 == 0) {
 					System.out.println("You have entered an even number");
@@ -33,12 +34,11 @@ public class Q6 {
 				System.out.println("You must enter an integer");
 				sc.next();
 
-			}
-			catch (InputException ex) {
+			} catch (InputException ex) {
 				System.out.println(ex.getMessage());
 			}
 		}
 		sc.close();
 	}
-	
+
 }

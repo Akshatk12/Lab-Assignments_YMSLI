@@ -1,4 +1,5 @@
 package day4.Q5;
+
 /*
  * Modify the code to throw an Exception if the number is greater than 100, set the exception
 message to “Number can’t be greater than 100”. Catch the Exception and display the exception
@@ -18,7 +19,7 @@ public class Q5 {
 				if (no == -1) {
 					break;
 				}
-				if(no>100)
+				if (no > 100)
 					throw new Exception();
 				if (no % 2 == 0) {
 					System.out.println("You have entered an even number");
@@ -29,8 +30,7 @@ public class Q5 {
 				System.out.println("You must enter an integer");
 				sc.next();
 
-			}
-			catch(Exception e) {
+			} catch (Exception e) {
 				System.out.println("Number can't be greater than 100");
 			}
 		}
@@ -38,5 +38,3 @@ public class Q5 {
 	}
 
 }
-
-

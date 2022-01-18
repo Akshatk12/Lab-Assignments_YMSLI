@@ -1,10 +1,12 @@
 package day4.Q3;
+
 /*
  * Write a program to serialize and deserialize an object of Employee class. Employee class has the following 
 members.
  */
 import java.io.*;
-class Employee implements Serializable{
+
+class Employee implements Serializable {
 
 	/**
 	 * 
@@ -13,54 +15,53 @@ class Employee implements Serializable{
 	private String name;
 	private String id;
 	private String address;
-	private transient double salary;		
+	private transient double salary;
+
 	public Employee(String name, String id, String address, double salary) {
-		
+
 		this.name = name;
 		this.id = id;
 		this.address = address;
 		this.salary = salary;
 	}
-	
+
 	public void display() {
-		System.out.println("Name: "+ name);
-		System.out.println("ID: "+ id);
-		System.out.println("Address: "+address);
-		System.out.println("Salary: "+salary);
+		System.out.println("Name: " + name);
+		System.out.println("ID: " + id);
+		System.out.println("Address: " + address);
+		System.out.println("Salary: " + salary);
 	}
 }
 
-
 public class Q3 {
-		//SERIALIZATION
-		public static void serialize(Employee employee, String file) {
-			try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))){
-				oos.writeObject(employee);
-				System.out.println("Serialization is done");
-				employee.display();
-			}
-			catch(IOException e) {
-				System.out.println(e.getMessage());
-			}
-		
+	// SERIALIZATION
+	public static void serialize(Employee employee, String file) {
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
+			oos.writeObject(employee);
+			System.out.println("Serialization is done");
+			employee.display();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
 		}
-		//DESERIALIZATION
-		public static void deserialize(String file) {
-			Employee employee1 = null;
-			try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))){
-				employee1 = (Employee)ois.readObject();
-				System.out.println("Deserialization is done");
-				employee1.display();
-			}catch(Exception e) {
-				System.out.println(e.getMessage());
-			}
-		}
-	
-		public static void main(String[] args) {
-			Employee employee = new Employee("Akshat","332","482",100000.00);
-			String file = "File3.txt";
-			serialize(employee,file);
-			deserialize(file);
-		}
-}
 
+	}
+
+	// DESERIALIZATION
+	public static void deserialize(String file) {
+		Employee employee1 = null;
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+			employee1 = (Employee) ois.readObject();
+			System.out.println("Deserialization is done");
+			employee1.display();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public static void main(String[] args) {
+		Employee employee = new Employee("Akshat", "332", "482", 100000.00);
+		String file = "File3.txt";
+		serialize(employee, file);
+		deserialize(file);
+	}
+}

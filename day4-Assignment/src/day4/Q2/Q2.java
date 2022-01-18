@@ -1,4 +1,5 @@
 package day4.Q2;
+
 /*
  Write a program to Read from command prompt using character buffer and Write to a file using character 
 buffer.

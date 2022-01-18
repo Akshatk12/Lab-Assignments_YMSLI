@@ -1,4 +1,5 @@
 package day4.Q7;
+
 /*
  * Create a class and a method named throwException which will throw 2 exceptions 1)
 InputException and 2) IOExcception. Now from the main method call this throwException

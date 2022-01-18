@@ -1,4 +1,5 @@
 package day4.Q1;
+
 /*
   Write a program to Read from file in byte format and Write to command prompt in both byte format and using
 formatted output(System.out.print or println)
@@ -15,7 +16,7 @@ public class Q1 {
 			fileInput.read(fileArray);
 
 			for (byte i : fileArray) {
-				System.out.print(i+" ");
+				System.out.print(i + " ");
 			}
 			System.out.println();
 
